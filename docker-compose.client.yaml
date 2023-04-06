@@ -6,7 +6,7 @@ services:
     ports:
       - 1080:1080
       - 1081:1081
-    command: v2ray --config=/etc/v2ray/config.json
+    command: run -c /etc/v2ray/config.json
     volumes:
-      - ${PWD}/v2ray-client.json:/etc/v2ray/config.json
+      - ./v2ray-client.json:/etc/v2ray/config.json
     restart: unless-stopped

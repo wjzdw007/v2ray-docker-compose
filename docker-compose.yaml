@@ -7,7 +7,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ${PWD}/Caddyfile:/etc/caddy/Caddyfile
+      - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
     restart: unless-stopped
@@ -17,9 +17,9 @@ services:
     container_name: v2ray
     expose:
       - 10000
-    command: v2ray --config=/etc/v2ray/config.json
+    command: run -c /etc/v2ray/config.json
     volumes:
-      - ${PWD}/v2ray-server.json:/etc/v2ray/config.json
+      - ./v2ray-server.json:/etc/v2ray/config.json
     restart: unless-stopped
 
 volumes:
