@@ -10,7 +10,6 @@
 
   # 网络测速服务
   handle /speedtest* {
-    uri strip_prefix /speedtest
     reverse_proxy speedtest:80
   }
 

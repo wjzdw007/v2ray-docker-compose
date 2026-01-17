@@ -32,6 +32,7 @@ services:
       - TITLE=网络测速
       - TELEMETRY=false
       - WEBPORT=80
+      - SUBFOLDER=speedtest
     restart: unless-stopped
 
 volumes:
