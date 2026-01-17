@@ -9,9 +9,10 @@
   }
 
   # 网络测速服务
-  handle /speedtest* {
+  handle_path /speedtest/* {
     reverse_proxy speedtest:80
   }
+  redir /speedtest /speedtest/ permanent
 
   @v2ray_websocket {
     path {{ .Env.PATH }}
