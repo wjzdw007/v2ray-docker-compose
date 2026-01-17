@@ -22,6 +22,18 @@ services:
       - ./v2ray-server.json:/etc/v2ray/config.json
     restart: unless-stopped
 
+  speedtest:
+    image: ghcr.io/librespeed/speedtest:latest
+    container_name: speedtest
+    expose:
+      - 80
+    environment:
+      - MODE=standalone
+      - TITLE=网络测速
+      - TELEMETRY=false
+      - WEBPORT=80
+    restart: unless-stopped
+
 volumes:
   caddy_data:
   caddy_config:
